@@ -1,6 +1,6 @@
 val1 = 20
 val2 = 10
-res1 = val1 + val2
+res1 = val1 ** val2
 res2 = val1 - val2
 res3 = val1 * val2
 res4 = val1 / val2
