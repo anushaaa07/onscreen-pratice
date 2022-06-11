@@ -53,3 +53,8 @@ r = "BEAUTIFUL"
 print(r.isupper())
 s = "not BEAUTIFUL"
 print(s.isupper())
+separator = ', '
+numList = ['1', '2', '3', '4']
+print(separator.join(numList))
+numTuple = ('1', '2', '3', '4')
+print(separator.join(numTuple))
