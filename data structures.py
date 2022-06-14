@@ -1,0 +1,5 @@
+x=input("Enter the number: ").split(".")
+y=len(x)
+list_1 = list(x[0])
+list_2 = list(x[1])
+print(len(list_1), len(list_2))
