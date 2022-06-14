@@ -1,11 +1,17 @@
-print("Input lengths of the triangle sides- ")
-a = int(input("a: "))
-b = int(input("b: "))
-c = int(input("c: "))
+import re
+my_pass=input("enter password: ").split(",")
+result = []
+for x in range(0,len(my_pass)):
+    y=len(my_pass[x])
+    if (y<15 and y>8) !=True:
+        pass
+    else:
+        a=re.findall(r"[a-z]+", my_pass[x])
+        b=re.findall(r"[0-9]+", my_pass[x])
+        c=re.findall(r"[A-Z]+", my_pass[x])
+        d=re.findall(r"[#$@]+", my_pass[x])
+        if (a and b and c and d):
+            result.append(my_pass[x])
+res=",".join(result)
+print(res)
 
-if a == b == c:
-	print("It is an equilateral triangle")
-elif a==b or b==c or c==a:
-	print("It is an isosceles triangle")
-else:
-	print("It is a scalene triangle")
