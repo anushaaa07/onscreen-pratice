@@ -1,17 +1,18 @@
 import re
-my_pass=input("enter password: ").split(",")
-result = []
-for x in range(0,len(my_pass)):
-    y=len(my_pass[x])
-    if (y<15 and y>8) !=True:
-        pass
+my_input=input("enter position:")
+if my_input.isalnum():
+    if len(my_input)>2: print("enter valid position")
     else:
-        a=re.findall(r"[a-z]+", my_pass[x])
-        b=re.findall(r"[0-9]+", my_pass[x])
-        c=re.findall(r"[A-Z]+", my_pass[x])
-        d=re.findall(r"[#$@]+", my_pass[x])
-        if (a and b and c and d):
-            result.append(my_pass[x])
-res=",".join(result)
-print(res)
-
+        a = re.search(r"[A-H][1-8]", my_input)
+        b = re.search(r"[1-8][A-H]", my_input)
+        if a or b:
+            x = re.findall(r"[BDFH][2468]", my_input)
+            y = re.findall(r"[BDFH][1357]", my_input)
+            i = re.findall(r"[ACEG][1357]", my_input)
+            j = re.findall(r"[ACEG][2468]", my_input)
+            if x: print("belongs to black square")
+            elif y: print("belongs to white square")
+            elif i: print("belongs to black square")
+            elif j: print("belongs to white square")
+        else: print("enter valid position")
+else: print("enter valid position")
